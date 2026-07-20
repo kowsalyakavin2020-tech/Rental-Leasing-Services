@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Settings | RentLease</title>
+  <meta name="description" content="Manage your RentLease account details and preferences." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="dashboard-logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+
+      <nav class="dashboard-nav">
+        <a href="user-dashboard.html" class="dash-nav-link">
+          <i class="fa-solid fa-grip"></i> Overview
+        </a>
+        <a href="user-bookings.html" class="dash-nav-link">
+          <i class="fa-solid fa-calendar-check"></i> My Bookings
+        </a>
+        <a href="user-listings.html" class="dash-nav-link">
+          <i class="fa-solid fa-layer-group"></i> My Listings
+        </a>
+        <a href="user-notifications.html" class="dash-nav-link">
+          <i class="fa-solid fa-bell"></i> Notifications
+        </a>
+        <a href="user-saved.html" class="dash-nav-link">
+          <i class="fa-solid fa-heart"></i> Saved Items
+        </a>
+        <a href="user-settings.html" class="dash-nav-link active">
+          <i class="fa-solid fa-gear"></i> Account Settings
+        </a>
+      </nav>
+
+      <a href="login.html" class="dashboard-logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </a>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="dashboard-main">
+
+      <!-- ===================== TOP BAR ===================== -->
+      <header class="dashboard-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-welcome">
+          <h1>Account Settings</h1>
+          <p class="topbar-email" id="userEmailDisplay">Loading account info...</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="topbar-badge">3</span>
+          </button>
+          <div class="topbar-user">
+            <img src="assets/images/avatar-1.webp" alt="User avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== SETTINGS ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Profile Details</h2>
+        </div>
+
+        <div class="settings-card" data-aos="fade-up">
+          <div class="settings-row">
+            <div>
+              <h4>Full Name</h4>
+              <p id="settingsNameDisplay">—</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn">Edit</button></a>
+          </div>
+          <div class="settings-row">
+            <div>
+              <h4>Email Address</h4>
+              <p id="settingsEmailDisplay">—</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn">Edit</button></a>
+          </div>
+          <div class="settings-row">
+            <div>
+              <h4>Phone Number</h4>
+              <p>Not added</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn">Add</button></a>
+          </div>
+          <div class="settings-row">
+            <div>
+              <h4>Password</h4>
+              <p>••••••••</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn">Change</button></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Preferences</h2>
+        </div>
+
+        <div class="settings-card" data-aos="fade-up">
+          <div class="settings-row">
+            <div>
+              <h4>Email Notifications</h4>
+              <p>Booking updates, promotions, and news</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn">Manage</button></a>
+          </div>
+          <div class="settings-row">
+            <div>
+              <h4>Push Notifications</h4>
+              <p>Enabled on this device</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn">Manage</button></a>
+          </div>
+          <div class="settings-row">
+            <div>
+              <h4>Two-Factor Authentication</h4>
+              <p>Not enabled — add extra security to your account</p>
+            </div>
+            <a href="404.html"><button class="btn btn-primary dash-small-btn">Enable</button></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Danger Zone</h2>
+        </div>
+
+        <div class="settings-card" data-aos="fade-up">
+          <div class="settings-row">
+            <div>
+              <h4>Delete Account</h4>
+              <p>This will permanently remove your account and all data.</p>
+            </div>
+            <a href="404.html"><button class="btn btn-secondary dash-small-btn" style="border-color:#d94f4f; color:#d94f4f;">Delete</button></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

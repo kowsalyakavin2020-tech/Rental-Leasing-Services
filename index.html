@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RentLease | Rent & Lease Anything, Anywhere</title>
+  <meta name="description" content="RentLease — a global rental and leasing marketplace for property, vehicles, equipment, furniture, and electronics." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-header">
+          <a href="index.html"><img src="assets/images/logo.webp" alt="RentLease logo" class="mobile-nav-logo" /></a>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="listings.html">Browse Listings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="mobile-nav-divider"></li>
+          <li class="mobile-nav-auth-row">
+            <a href="login.html" class="mobile-nav-login-btn">Log In</a>
+            <a href="signup.html" class="mobile-nav-signup">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary header-btn">Log In</a>
+        <a href="signup.html" class="btn btn-primary header-btn">
+          Sign Up
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg-layer">
+      <img src="assets/images/hero-bg.webp" alt="" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="section-tag hero-tag">Trusted by 50,000+ renters worldwide</span>
+        <h1 class="hero-title">
+          Rent or Lease <span class="text-amber">Almost Anything</span> — Fast, Safe, Simple
+        </h1>
+        <p class="hero-subtitle">
+          From homes and vehicles to equipment and electronics — find verified listings near you, or list your own items and start earning today.
+        </p>
+
+        <form class="hero-search" id="heroSearchForm">
+          <div class="hero-search-field">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="What are you looking to rent?" id="heroSearchInput" required />
+          </div>
+          <div class="hero-search-field hero-search-select">
+            <i class="fa-solid fa-layer-group"></i>
+            <select id="heroSearchCategory">
+              <option value="">All Categories</option>
+              <option value="property">Property</option>
+              <option value="vehicle">Vehicles</option>
+              <option value="equipment">Equipment</option>
+              <option value="furniture">Furniture</option>
+              <option value="electronics">Electronics</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary hero-search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </form>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="12500">0</span>
+            <span class="hero-stat-label">Active Listings</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="50000">0</span>
+            <span class="hero-stat-label">Happy Renters</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="120">0</span>
+            <span class="hero-stat-label">Cities Covered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll to explore</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section class="section categories-section" id="categories">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Browse by Category</span>
+        <h2>Everything You Need, In One Place</h2>
+        <p>Explore thousands of verified listings across five major rental categories.</p>
+      </div>
+
+      <div class="categories-grid">
+        <a href="listings.html?cat=property" class="category-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="assets/images/category-property.webp" alt="Property rentals" />
+          <div class="category-overlay">
+            <i class="fa-solid fa-house"></i>
+            <h3>Property</h3>
+            <span>3,200+ listings</span>
+          </div>
+        </a>
+        <a href="listings.html?cat=vehicle" class="category-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/images/category-vehicle.webp" alt="Vehicle rentals" />
+          <div class="category-overlay">
+            <i class="fa-solid fa-car"></i>
+            <h3>Vehicles</h3>
+            <span>4,800+ listings</span>
+          </div>
+        </a>
+        <a href="listings.html?cat=equipment" class="category-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/images/category-equipment.webp" alt="Equipment rentals" />
+          <div class="category-overlay">
+            <i class="fa-solid fa-truck-monster"></i>
+            <h3>Equipment</h3>
+            <span>1,900+ listings</span>
+          </div>
+        </a>
+        <a href="listings.html?cat=furniture" class="category-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/images/category-furniture.webp" alt="Furniture rentals" />
+          <div class="category-overlay">
+            <i class="fa-solid fa-couch"></i>
+            <h3>Furniture</h3>
+            <span>2,400+ listings</span>
+          </div>
+        </a>
+        <a href="listings.html?cat=electronics" class="category-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="assets/images/category-electronics.webp" alt="Electronics rentals" />
+          <div class="category-overlay">
+            <i class="fa-solid fa-laptop"></i>
+            <h3>Electronics</h3>
+            <span>1,600+ listings</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section how-it-works-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Simple Process</span>
+        <h2>How RentLease Works</h2>
+        <p>Renting or leasing has never been this easy — three steps, zero hassle.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="step-number">01</div>
+          <i class="fa-solid fa-magnifying-glass step-icon"></i>
+          <h3>Search & Discover</h3>
+          <p>Browse verified listings by category, location, price, and availability.</p>
+        </div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="step-number">02</div>
+          <i class="fa-solid fa-calendar-check step-icon"></i>
+          <h3>Book Instantly</h3>
+          <p>Reserve your item securely with flexible dates and transparent pricing.</p>
+        </div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-number">03</div>
+          <i class="fa-solid fa-handshake step-icon"></i>
+          <h3>Enjoy & Return</h3>
+          <p>Pick up or get it delivered, use it, and return it — all tracked in your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section featured-section" id="featured">
+    <div class="container">
+      <div class="section-header-row" data-aos="fade-up">
+        <div class="section-header align-left">
+          <span class="section-tag">Handpicked For You</span>
+          <h2>Featured Listings</h2>
+        </div>
+        <a href="listings.html" class="btn btn-secondary">View All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="listings-grid">
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="listing-img"><img src="assets/images/listing-1.webp" alt="3BHK apartment" /><span class="listing-badge">Property</span></div>
+          <div class="listing-body">
+            <h3>Modern 3BHK Apartment</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Downtown District</p>
+            <div class="listing-footer"><span class="listing-price">$85/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="listing-img"><img src="assets/images/listing-2.webp" alt="Sedan car" /><span class="listing-badge">Vehicle</span></div>
+          <div class="listing-body">
+            <h3>Premium Sedan</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Airport Hub</p>
+            <div class="listing-footer"><span class="listing-price">$42/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="listing-img"><img src="assets/images/listing-3.webp" alt="Excavator" /><span class="listing-badge">Equipment</span></div>
+          <div class="listing-body">
+            <h3>Mini Excavator</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Industrial Zone</p>
+            <div class="listing-footer"><span class="listing-price">$150/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="listing-img"><img src="assets/images/listing-4.webp" alt="Sofa set" /><span class="listing-badge">Furniture</span></div>
+          <div class="listing-body">
+            <h3>3-Seater Sofa Set</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$18/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-choose-section" id="why-choose">
+    <div class="container why-choose-grid">
+      <div class="why-choose-content" data-aos="fade-right">
+        <span class="section-tag">Why RentLease</span>
+        <h2>Built On Trust, Transparency & Simplicity</h2>
+        <p>We verify every lister, secure every transaction, and support you at every step — so renting feels effortless.</p>
+
+        <div class="why-choose-list">
+          <div class="why-choose-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div><h4>Verified Listings</h4><p>Every item and lister goes through identity and quality checks.</p></div>
+          </div>
+          <div class="why-choose-item">
+            <i class="fa-solid fa-lock"></i>
+            <div><h4>Secure Payments</h4><p>Encrypted transactions with deposit protection on every booking.</p></div>
+          </div>
+          <div class="why-choose-item">
+            <i class="fa-solid fa-headset"></i>
+            <div><h4>24/7 Support</h4><p>Real humans ready to help, anytime, anywhere.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-choose-visual" data-aos="fade-left">
+        <img src="assets/images/about-office.webp" alt="RentLease team at work" />
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-banner" id="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="0">
+        <span class="stat-number" data-count="12500">0</span>+
+        <p>Active Listings</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+        <span class="stat-number" data-count="50000">0</span>+
+        <p>Happy Renters</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+        <span class="stat-number" data-count="120">0</span>+
+        <p>Cities Covered</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+        <span class="stat-number" data-count="98">0</span>%
+        <p>Satisfaction Rate</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Testimonials</span>
+        <h2>What Our Community Says</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Found a fully furnished apartment within a day. The whole process felt safe and transparent from start to finish.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-1.webp" alt="Renter" />
+            <div><h4>Arjun Mehta</h4><span>Property Renter</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>I list my equipment here and get consistent bookings every month. Payouts are always on time.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-2.webp" alt="Lister" />
+            <div><h4>Sophia Turner</h4><span>Equipment Lister</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Booked a car for a weekend trip in minutes. Clear pricing, no hidden fees — exactly what I needed.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/avatar-3.webp" alt="Renter" />
+            <div><h4>Daniel Osei</h4><span>Vehicle Renter</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section blog-section" id="blog">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">From Our Blog</span>
+        <h2>Tips, Trends & Rental Guides</h2>
+      </div>
+
+      <div class="blog-grid">
+        <a href="404.html" class="blog-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="assets/images/blog-1.webp" alt="Rental market news" />
+          <div class="blog-body">
+            <span class="blog-tag">Market Trends</span>
+            <h3>What's Driving the Rental Boom in 2026</h3>
+            <span class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="404.html" class="blog-card" data-aos="fade-up" data-aos-delay="150">
+          <img src="assets/images/blog-2.webp" alt="Rental tips" />
+          <div class="blog-body">
+            <span class="blog-tag">Renter Tips</span>
+            <h3>5 Things to Check Before You Rent Anything</h3>
+            <span class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="404.html" class="blog-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/images/blog-3.webp" alt="Passive income" />
+          <div class="blog-body">
+            <span class="blog-tag">For Listers</span>
+            <h3>Turn Idle Assets Into Steady Monthly Income</h3>
+            <span class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lister-cta-section" id="become-lister">
+    <div class="container lister-cta-inner" data-aos="fade-up">
+      <div class="lister-cta-content">
+        <span class="section-tag hero-tag">For Owners</span>
+        <h2>Have Something to Rent Out? Start Earning Today.</h2>
+        <p>List your property, vehicle, equipment, or furniture in minutes and reach thousands of verified renters.</p>
+        <a href="404.html" class="btn btn-primary">
+          <i class="fa-solid fa-plus"></i> List Your Item Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section" id="newsletter">
+    <div class="container newsletter-inner" data-aos="fade-up">
+      <div>
+        <h2>Stay in the Loop</h2>
+        <p>Get new listings, rental tips, and exclusive offers straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Enter your email address" id="newsletterEmail" required />
+        <button type="submit" class="btn btn-primary">Subscribe <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+        <p>Your trusted global marketplace for renting and leasing anything, anywhere.</p>
+        <p class="footer-address">
+          <i class="fa-solid fa-location-dot"></i>
+          MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008
+        </p>
+        <div class="footer-socials">
+          <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="listings.html">Browse Listings</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="404.html">Help Center</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Trust & Safety</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <a href="404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+        <a href="404.html"><i class="fa-solid fa-envelope"></i> support@stackly.com</a>
+        <a href="404.html"><i class="fa-solid fa-comments"></i> Live Chat Support</a>
+        <span class="footer-hours"><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–7PM</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 RentLease. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gsap-animations.js"></script>
+</body>
+</html>

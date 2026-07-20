@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Rental & Leasing Theme — Color & Design Tokens
+   Only 3 core colors used across the entire theme
+   ========================================================================== */
+
+:root {
+  /* === Core 3-color palette === */
+  --color-navy: #0F2540;        /* Primary — headers, text, footer, nav */
+  --color-amber: #E8A33D;       /* Accent — CTAs, highlights, hover states */
+  --color-offwhite: #F7F5F0;    /* Base — backgrounds, cards */
+
+  /* === Derived tints/shades (from the 3 core colors only) === */
+  --navy-light: #1C3A5E;
+  --navy-dark: #081526;
+  --amber-light: #F0B860;
+  --amber-dark: #C9821F;
+  --white: #FFFFFF;
+
+  /* === Text === */
+  --text-primary: var(--color-navy);
+  --text-secondary: #4A5A6E;
+  --text-on-dark: var(--color-offwhite);
+  --text-muted: #8A97A8;
+
+  /* === Typography === */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-2xl: 2.75rem;
+  --fs-3xl: 3.5rem;
+
+  /* === Spacing scale === */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* === Radius === */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* === Shadows === */
+  --shadow-sm: 0 2px 8px rgba(15, 37, 64, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 37, 64, 0.12);
+  --shadow-lg: 0 16px 48px rgba(15, 37, 64, 0.18);
+  --shadow-amber-glow: 0 8px 24px rgba(232, 163, 61, 0.35);
+
+  /* === Transitions === */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* === Layout === */
+  --container-max: 1280px;
+  --header-height: 84px;
+}

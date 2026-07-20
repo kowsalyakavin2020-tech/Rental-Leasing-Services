@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revenue | Admin | RentLease</title>
+  <meta name="description" content="Track platform revenue and financial performance." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="dashboard-logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+
+      <nav class="dashboard-nav">
+        <a href="admin-dashboard.html" class="dash-nav-link">
+          <i class="fa-solid fa-grip"></i> Overview
+        </a>
+        <a href="admin-approvals.html" class="dash-nav-link">
+          <i class="fa-solid fa-clipboard-check"></i> Pending Approvals
+        </a>
+        <a href="admin-users.html" class="dash-nav-link">
+          <i class="fa-solid fa-users"></i> Manage Users
+        </a>
+        <a href="admin-listings.html" class="dash-nav-link">
+          <i class="fa-solid fa-layer-group"></i> Manage Listings
+        </a>
+        <a href="admin-revenue.html" class="dash-nav-link active">
+          <i class="fa-solid fa-chart-column"></i> Revenue
+        </a>
+        <a href="admin-reports.html" class="dash-nav-link">
+          <i class="fa-solid fa-flag"></i> Reports
+        </a>
+      </nav>
+
+      <a href="login.html" class="dashboard-logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </a>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="dashboard-main">
+
+      <!-- ===================== TOP BAR ===================== -->
+      <header class="dashboard-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-welcome">
+          <h1>Revenue</h1>
+          <p class="topbar-email" id="adminEmailDisplay">Loading account info...</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="topbar-badge">5</span>
+          </button>
+          <div class="topbar-user">
+            <img src="assets/images/avatar-2.webp" alt="Admin avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== REVENUE STATS ===================== -->
+      <section class="dash-section">
+        <div class="stats-cards-grid">
+          <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="0">
+            <i class="fa-solid fa-sack-dollar"></i>
+            <div><strong>$284K</strong><span>This Month</span></div>
+          </div>
+          <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <div><strong>+12.4%</strong><span>Growth vs Last Month</span></div>
+          </div>
+          <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-solid fa-coins"></i>
+            <div><strong>$2.1M</strong><span>Year to Date</span></div>
+          </div>
+          <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fa-solid fa-percent"></i>
+            <div><strong>8%</strong><span>Platform Fee Rate</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== REVENUE CHART ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Monthly Revenue</h2>
+          <span class="status-badge status-active">+12.4% this month</span>
+        </div>
+
+        <div class="revenue-chart-placeholder" data-aos="fade-up">
+          <div class="revenue-bar" style="height: 40%;"><span>Jan</span></div>
+          <div class="revenue-bar" style="height: 45%;"><span>Feb</span></div>
+          <div class="revenue-bar" style="height: 60%;"><span>Mar</span></div>
+          <div class="revenue-bar" style="height: 52%;"><span>Apr</span></div>
+          <div class="revenue-bar" style="height: 70%;"><span>May</span></div>
+          <div class="revenue-bar" style="height: 65%;"><span>Jun</span></div>
+          <div class="revenue-bar" style="height: 88%;"><span>Jul</span></div>
+        </div>
+      </section>
+
+      <!-- ===================== REVENUE BY CATEGORY ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Revenue by Category</h2>
+        </div>
+
+        <div class="bookings-table" data-aos="fade-up">
+          <div class="booking-row booking-row-head">
+            <span>Category</span>
+            <span>Bookings</span>
+            <span>Share</span>
+            <span>Revenue</span>
+            <span></span>
+          </div>
+          <div class="booking-row">
+            <div class="booking-item"><div><strong>Property</strong></div></div>
+            <span>3,120</span>
+            <span class="status-badge status-active">34%</span>
+            <span class="booking-total">$96,500</span>
+            <span></span>
+          </div>
+          <div class="booking-row">
+            <div class="booking-item"><div><strong>Vehicles</strong></div></div>
+            <span>4,850</span>
+            <span class="status-badge status-active">28%</span>
+            <span class="booking-total">$79,200</span>
+            <span></span>
+          </div>
+          <div class="booking-row">
+            <div class="booking-item"><div><strong>Equipment</strong></div></div>
+            <span>1,240</span>
+            <span class="status-badge status-active">19%</span>
+            <span class="booking-total">$53,900</span>
+            <span></span>
+          </div>
+          <div class="booking-row">
+            <div class="booking-item"><div><strong>Furniture</strong></div></div>
+            <span>2,010</span>
+            <span class="status-badge status-active">12%</span>
+            <span class="booking-total">$34,100</span>
+            <span></span>
+          </div>
+          <div class="booking-row">
+            <div class="booking-item"><div><strong>Electronics</strong></div></div>
+            <span>980</span>
+            <span class="status-badge status-active">7%</span>
+            <span class="booking-total">$20,300</span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

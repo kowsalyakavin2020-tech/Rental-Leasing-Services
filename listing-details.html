@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Sedan | RentLease</title>
+  <meta name="description" content="Rent a Premium Sedan near Airport Hub — verified lister, flexible dates, secure booking on RentLease." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/listing-details.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html" class="active">Browse Listings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary header-btn">Log In</a>
+        <a href="signup.html" class="btn btn-primary header-btn">
+          Sign Up
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== 1. BREADCRUMB ===================== -->
+  <section class="ld-breadcrumb-section">
+    <div class="container">
+      <div class="breadcrumb" data-aos="fade-up">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i>
+        <a href="listings.html">Browse Listings</a> <i class="fa-solid fa-chevron-right"></i>
+        <a href="listings.html?cat=vehicle">Vehicles</a> <i class="fa-solid fa-chevron-right"></i>
+        <span>Premium Sedan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. GALLERY ===================== -->
+  <section class="ld-gallery-section">
+    <div class="container">
+      <div class="ld-gallery" data-aos="fade-up">
+        <div class="ld-gallery-main">
+          <img src="assets/images/listing-2.webp" alt="Premium Sedan" id="galleryMainImg" />
+          <span class="listing-badge ld-gallery-badge">Vehicle</span>
+          <button class="ld-fav-btn" id="ldFavBtn" aria-label="Save listing">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+        <div class="ld-gallery-thumbs">
+          <img src="assets/images/listing-2.webp" alt="Thumbnail" class="ld-thumb active" data-full="assets/images/listing-2.webp" />
+          <img src="assets/images/category-vehicle.webp" alt="Thumbnail" class="ld-thumb" data-full="assets/images/category-vehicle.webp" />
+          <img src="assets/images/hero-bg.webp" alt="Thumbnail" class="ld-thumb" data-full="assets/images/hero-bg.webp" />
+          <img src="assets/images/about-office.webp" alt="Thumbnail" class="ld-thumb" data-full="assets/images/about-office.webp" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. INFO + BOOKING WIDGET ===================== -->
+  <section class="section ld-info-section">
+    <div class="container ld-info-grid">
+
+      <div class="ld-main-info" data-aos="fade-right">
+        <div class="ld-title-row">
+          <div>
+            <h1>Premium Sedan</h1>
+            <p class="ld-location"><i class="fa-solid fa-location-dot"></i> Airport Hub, San Francisco</p>
+          </div>
+          <div class="ld-rating">
+            <i class="fa-solid fa-star"></i> 4.8 <span>(112 reviews)</span>
+          </div>
+        </div>
+
+        <div class="badge-row">
+          <span class="badge badge-navy"><i class="fa-solid fa-shield-halved"></i> Verified Lister</span>
+          <span class="badge badge-amber"><i class="fa-solid fa-bolt"></i> Instant Book</span>
+          <span class="badge badge-outline"><i class="fa-solid fa-rotate-left"></i> Free Cancellation</span>
+        </div>
+
+        <!-- ===================== 4. DESCRIPTION ===================== -->
+        <div class="ld-block">
+          <h2>About This Vehicle</h2>
+          <p>This well-maintained Premium Sedan is perfect for airport transfers, business trips, or weekend getaways. Automatic transmission, full insurance coverage included, and unlimited mileage within the city limits. Comes with GPS navigation and a phone mount for convenience.</p>
+        </div>
+
+        <!-- ===================== 5. FEATURES ===================== -->
+        <div class="ld-block">
+          <h2>Features & Amenities</h2>
+          <div class="ld-features-grid">
+            <div class="ld-feature"><i class="fa-solid fa-gas-pump"></i> Full Tank Included</div>
+            <div class="ld-feature"><i class="fa-solid fa-users"></i> 5 Seats</div>
+            <div class="ld-feature"><i class="fa-solid fa-suitcase"></i> 2 Large Bags</div>
+            <div class="ld-feature"><i class="fa-solid fa-gears"></i> Automatic Transmission</div>
+            <div class="ld-feature"><i class="fa-solid fa-shield"></i> Insurance Included</div>
+            <div class="ld-feature"><i class="fa-solid fa-location-crosshairs"></i> GPS Navigation</div>
+            <div class="ld-feature"><i class="fa-solid fa-snowflake"></i> Air Conditioning</div>
+            <div class="ld-feature"><i class="fa-solid fa-road"></i> Unlimited Mileage</div>
+          </div>
+        </div>
+
+        <!-- ===================== 6. LISTER CARD ===================== -->
+        <div class="ld-block">
+          <h2>Meet Your Lister</h2>
+          <div class="ld-lister-card">
+            <img src="assets/images/lister-2.webp" alt="Amara Okafor" />
+            <div class="ld-lister-info">
+              <h3>Amara Okafor</h3>
+              <span class="lister-role">Vehicle Lister · Joined 1.5 yrs ago</span>
+              <div class="lister-rating"><i class="fa-solid fa-star"></i> 4.8 <span>(184 reviews)</span></div>
+            </div>
+            <button class="btn btn-secondary ld-contact-btn">
+              <i class="fa-solid fa-message"></i> Contact
+            </button>
+          </div>
+        </div>
+
+        <!-- ===================== 7. REVIEWS ===================== -->
+        <div class="ld-block">
+          <h2>Reviews (112)</h2>
+          <div class="ld-reviews-list">
+            <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+              <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p>Clean car, smooth pickup process, and the lister was very responsive. Would rent again.</p>
+              <div class="testimonial-author">
+                <img src="assets/images/avatar-1.webp" alt="Reviewer" />
+                <div><h4>Daniel Osei</h4><span>Jul 2026</span></div>
+              </div>
+            </div>
+            <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p>Exactly as described. Great for our airport pickup — fuel was full as promised.</p>
+              <div class="testimonial-author">
+                <img src="assets/images/avatar-3.webp" alt="Reviewer" />
+                <div><h4>Michael Obi</h4><span>Jun 2026</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== BOOKING WIDGET (sticky sidebar) ===================== -->
+      <aside class="ld-booking-widget" data-aos="fade-left">
+        <div class="ld-booking-card">
+          <div class="ld-price-row">
+            <span class="ld-price">$42</span><span class="ld-price-unit">/ day</span>
+          </div>
+
+          <form class="ld-booking-form" id="ldBookingForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ldStartDate">Start Date</label>
+                <input type="date" id="ldStartDate" required />
+              </div>
+              <div class="form-group">
+                <label for="ldEndDate">End Date</label>
+                <input type="date" id="ldEndDate" required />
+              </div>
+            </div>
+
+            <div class="ld-price-breakdown">
+              <div class="ld-price-line"><span>$42 x 3 days</span><span>$126</span></div>
+              <div class="ld-price-line"><span>Service fee</span><span>$8</span></div>
+              <div class="ld-price-line ld-price-total"><span>Total</span><span id="ldTotalPrice">$134</span></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary ld-book-btn">
+              <i class="fa-solid fa-calendar-check"></i> Book Now
+            </button>
+            <p class="ld-booking-note"><i class="fa-solid fa-shield-halved"></i> Free cancellation up to 48 hours before pickup</p>
+          </form>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ===================== 8. SIMILAR LISTINGS ===================== -->
+  <section class="section similar-listings-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">You Might Also Like</span>
+        <h2>Similar Listings</h2>
+      </div>
+
+      <div class="listings-grid">
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="listing-img"><img src="assets/images/listing-1.webp" alt="Studio apartment" /><span class="listing-badge">Property</span></div>
+          <div class="listing-body">
+            <h3>Cozy Studio Apartment</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$60/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="listing-img"><img src="assets/images/listing-2.webp" alt="SUV" /><span class="listing-badge">Vehicle</span></div>
+          <div class="listing-body">
+            <h3>Family SUV</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Airport Hub</p>
+            <div class="listing-footer"><span class="listing-price">$65/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="listing-img"><img src="assets/images/listing-6.webp" alt="Camera" /><span class="listing-badge">Electronics</span></div>
+          <div class="listing-body">
+            <h3>DSLR Camera Kit</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$35/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+        <div class="listing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="listing-img"><img src="assets/images/listing-4.webp" alt="Sofa set" /><span class="listing-badge">Furniture</span></div>
+          <div class="listing-body">
+            <h3>3-Seater Sofa Set</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$18/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.webp" alt="RentLease logo" class="footer-logo" />
+        <p>Your trusted global marketplace for renting and leasing anything, anywhere.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a href="listings.html?cat=property">Property</a>
+        <a href="listings.html?cat=vehicle">Vehicles</a>
+        <a href="listings.html?cat=equipment">Equipment</a>
+        <a href="listings.html?cat=furniture">Furniture</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Trust & Safety</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 RentLease. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/listing-details.js"></script>
+</body>
+</html>

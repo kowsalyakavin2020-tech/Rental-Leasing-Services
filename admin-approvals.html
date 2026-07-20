@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pending Approvals | Admin | RentLease</title>
+  <meta name="description" content="Review and approve or reject pending listing submissions." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="dashboard-logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+
+      <nav class="dashboard-nav">
+        <a href="admin-dashboard.html" class="dash-nav-link">
+          <i class="fa-solid fa-grip"></i> Overview
+        </a>
+        <a href="admin-approvals.html" class="dash-nav-link active">
+          <i class="fa-solid fa-clipboard-check"></i> Pending Approvals
+        </a>
+        <a href="admin-users.html" class="dash-nav-link">
+          <i class="fa-solid fa-users"></i> Manage Users
+        </a>
+        <a href="admin-listings.html" class="dash-nav-link">
+          <i class="fa-solid fa-layer-group"></i> Manage Listings
+        </a>
+        <a href="admin-revenue.html" class="dash-nav-link">
+          <i class="fa-solid fa-chart-column"></i> Revenue
+        </a>
+        <a href="admin-reports.html" class="dash-nav-link">
+          <i class="fa-solid fa-flag"></i> Reports
+        </a>
+      </nav>
+
+      <a href="login.html" class="dashboard-logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </a>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="dashboard-main">
+
+      <!-- ===================== TOP BAR ===================== -->
+      <header class="dashboard-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-welcome">
+          <h1>Pending Approvals</h1>
+          <p class="topbar-email" id="adminEmailDisplay">Loading account info...</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="topbar-badge">5</span>
+          </button>
+          <div class="topbar-user">
+            <img src="assets/images/avatar-2.webp" alt="Admin avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== PENDING APPROVALS ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Listings Awaiting Review</h2>
+          <span class="status-badge status-pending">18 waiting</span>
+        </div>
+
+        <div class="bookings-table" data-aos="fade-up">
+          <div class="approval-row booking-row-head">
+            <span>Listing</span>
+            <span>Category</span>
+            <span>Submitted By</span>
+            <span>Date</span>
+            <span>Action</span>
+          </div>
+
+          <div class="approval-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-5.webp" alt="MacBook Pro" />
+              <div><strong>MacBook Pro 16"</strong></div>
+            </div>
+            <span>Electronics</span>
+            <span>arjun.verma@mail.com</span>
+            <span>Jul 18, 2026</span>
+            <div class="approval-actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="approval-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-3.webp" alt="Excavator" />
+              <div><strong>Compact Excavator</strong></div>
+            </div>
+            <span>Equipment</span>
+            <span>carlos.m@mail.com</span>
+            <span>Jul 17, 2026</span>
+            <div class="approval-actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="approval-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-4.webp" alt="Sofa" />
+              <div><strong>Modular Sofa Set</strong></div>
+            </div>
+            <span>Furniture</span>
+            <span>lisa.chen@mail.com</span>
+            <span>Jul 16, 2026</span>
+            <div class="approval-actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="approval-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-1.webp" alt="Apartment" />
+              <div><strong>Beachside Villa</strong></div>
+            </div>
+            <span>Property</span>
+            <span>noah.bennett@mail.com</span>
+            <span>Jul 15, 2026</span>
+            <div class="approval-actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="approval-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-2.webp" alt="Car" />
+              <div><strong>Electric Hatchback</strong></div>
+            </div>
+            <span>Vehicle</span>
+            <span>fatima.a@mail.com</span>
+            <span>Jul 14, 2026</span>
+            <div class="approval-actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

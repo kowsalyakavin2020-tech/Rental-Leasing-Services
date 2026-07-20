@@ -1,0 +1,52 @@
+/* ==========================================================================
+   COMPONENTS — shared reusable UI pieces (badges, ratings) used across pages
+   ========================================================================== */
+
+/* === BADGES === */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.badge-navy {
+  background: var(--color-navy);
+  color: var(--color-offwhite);
+}
+
+.badge-amber {
+  background: rgba(232, 163, 61, 0.15);
+  color: var(--amber-dark);
+}
+
+.badge-outline {
+  background: transparent;
+  border: 1px solid rgba(15, 37, 64, 0.15);
+  color: var(--text-secondary);
+}
+
+/* === STAR RATING (standalone use) === */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-amber);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.star-rating span {
+  color: var(--text-muted);
+  font-weight: 400;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved Items | RentLease</title>
+  <meta name="description" content="Your saved and favorited listings on RentLease." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="dashboard-logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+
+      <nav class="dashboard-nav">
+        <a href="user-dashboard.html" class="dash-nav-link">
+          <i class="fa-solid fa-grip"></i> Overview
+        </a>
+        <a href="user-bookings.html" class="dash-nav-link">
+          <i class="fa-solid fa-calendar-check"></i> My Bookings
+        </a>
+        <a href="user-listings.html" class="dash-nav-link">
+          <i class="fa-solid fa-layer-group"></i> My Listings
+        </a>
+        <a href="user-notifications.html" class="dash-nav-link">
+          <i class="fa-solid fa-bell"></i> Notifications
+        </a>
+        <a href="user-saved.html" class="dash-nav-link active">
+          <i class="fa-solid fa-heart"></i> Saved Items
+        </a>
+        <a href="user-settings.html" class="dash-nav-link">
+          <i class="fa-solid fa-gear"></i> Account Settings
+        </a>
+      </nav>
+
+      <a href="login.html" class="dashboard-logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </a>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="dashboard-main">
+
+      <!-- ===================== TOP BAR ===================== -->
+      <header class="dashboard-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-welcome">
+          <h1>Saved Items</h1>
+          <p class="topbar-email" id="userEmailDisplay">Loading account info...</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="topbar-badge">3</span>
+          </button>
+          <div class="topbar-user">
+            <img src="assets/images/avatar-1.webp" alt="User avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== SAVED ITEMS ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>Your Saved Listings</h2>
+          <a href="404.html" class="btn btn-secondary dash-small-btn">Browse More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="saved-grid">
+          <div class="listing-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="listing-img"><img src="assets/images/listing-1.webp" alt="Studio apartment" /><span class="listing-badge">Property</span></div>
+            <div class="listing-body">
+              <h3>Cozy Studio Apartment</h3>
+              <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+              <div class="listing-footer"><span class="listing-price">$60/day</span><i class="fa-solid fa-heart listing-fav active"></i></div>
+            </div>
+          </div>
+          <div class="listing-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="listing-img"><img src="assets/images/listing-2.webp" alt="SUV" /><span class="listing-badge">Vehicle</span></div>
+            <div class="listing-body">
+              <h3>Family SUV</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Airport Hub</p>
+              <div class="listing-footer"><span class="listing-price">$65/day</span><i class="fa-solid fa-heart listing-fav active"></i></div>
+            </div>
+          </div>
+          <div class="listing-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="listing-img"><img src="assets/images/listing-4.webp" alt="Sofa set" /><span class="listing-badge">Furniture</span></div>
+            <div class="listing-body">
+              <h3>3-Seater Sofa Set</h3>
+              <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+              <div class="listing-footer"><span class="listing-price">$18/day</span><i class="fa-solid fa-heart listing-fav active"></i></div>
+            </div>
+          </div>
+          <div class="listing-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="listing-img"><img src="assets/images/listing-5.webp" alt="Laptop" /><span class="listing-badge">Electronics</span></div>
+            <div class="listing-body">
+              <h3>MacBook Pro 16"</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Downtown District</p>
+              <div class="listing-footer"><span class="listing-price">$22/day</span><i class="fa-solid fa-heart listing-fav active"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Listings | RentLease</title>
+  <meta name="description" content="Manage the items you've listed for rent on RentLease." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="dashboard-logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+
+      <nav class="dashboard-nav">
+        <a href="user-dashboard.html" class="dash-nav-link">
+          <i class="fa-solid fa-grip"></i> Overview
+        </a>
+        <a href="user-bookings.html" class="dash-nav-link">
+          <i class="fa-solid fa-calendar-check"></i> My Bookings
+        </a>
+        <a href="user-listings.html" class="dash-nav-link active">
+          <i class="fa-solid fa-layer-group"></i> My Listings
+        </a>
+        <a href="user-notifications.html" class="dash-nav-link">
+          <i class="fa-solid fa-bell"></i> Notifications
+        </a>
+        <a href="user-saved.html" class="dash-nav-link">
+          <i class="fa-solid fa-heart"></i> Saved Items
+        </a>
+        <a href="user-settings.html" class="dash-nav-link">
+          <i class="fa-solid fa-gear"></i> Account Settings
+        </a>
+      </nav>
+
+      <a href="login.html" class="dashboard-logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </a>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="dashboard-main">
+
+      <!-- ===================== TOP BAR ===================== -->
+      <header class="dashboard-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-welcome">
+          <h1>My Listings</h1>
+          <p class="topbar-email" id="userEmailDisplay">Loading account info...</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="topbar-badge">3</span>
+          </button>
+          <div class="topbar-user">
+            <img src="assets/images/avatar-1.webp" alt="User avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== MY LISTINGS ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>My Listings</h2>
+          <a href="404.html" class="btn btn-primary dash-small-btn"><i class="fa-solid fa-plus"></i> Add New Listing</a>
+        </div>
+
+        <div class="my-listings-grid">
+          <div class="my-listing-card" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/images/listing-3.webp" alt="Mini Excavator" />
+            <div class="my-listing-body">
+              <h3>Mini Excavator</h3>
+              <span class="status-badge status-active">Live</span>
+              <div class="my-listing-stats">
+                <span><i class="fa-solid fa-eye"></i> 340 views</span>
+                <span><i class="fa-solid fa-calendar-check"></i> 6 bookings</span>
+              </div>
+            </div>
+          </div>
+          <div class="my-listing-card" data-aos="fade-up" data-aos-delay="150">
+            <img src="assets/images/listing-5.webp" alt="MacBook Pro" />
+            <div class="my-listing-body">
+              <h3>MacBook Pro 16"</h3>
+              <span class="status-badge status-pending">Pending Review</span>
+              <div class="my-listing-stats">
+                <span><i class="fa-solid fa-eye"></i> 12 views</span>
+                <span><i class="fa-solid fa-calendar-check"></i> 0 bookings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

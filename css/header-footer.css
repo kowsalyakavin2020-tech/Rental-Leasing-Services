@@ -1,0 +1,439 @@
+/* ==========================================================================
+   HEADER & FOOTER — Shared across all pages
+   ========================================================================== */
+
+/* === HEADER === */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  background: transparent;
+  transition: var(--transition-base);
+}
+
+.site-header.scrolled {
+  background: var(--color-offwhite);
+  box-shadow: var(--shadow-md);
+  height: 72px;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+  z-index: 1001;
+}
+
+.logo img {
+  height: 38px;
+  transition: var(--transition-base);
+  filter: brightness(0) invert(1);
+}
+
+.site-header.scrolled .logo img {
+  height: 32px;
+  filter: none;
+}
+
+/* === NAV === */
+.main-nav {
+  position: relative;
+  z-index: 999;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.main-nav a {
+  font-weight: 500;
+  font-size: var(--fs-base);
+  color: var(--color-offwhite);
+  position: relative;
+  padding: 6px 0;
+  transition: var(--transition-fast);
+}
+
+.site-header.scrolled .main-nav a {
+  color: var(--color-navy);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-amber);
+  transition: var(--transition-base);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--color-amber);
+}
+
+.site-header.scrolled .main-nav a.active,
+.site-header.scrolled .main-nav a:hover {
+  color: var(--amber-dark);
+}
+
+/* === HEADER ACTIONS === */
+.header-actions {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header-btn {
+  padding: 10px 22px;
+  font-size: var(--fs-sm);
+}
+
+.site-header:not(.scrolled) .btn-secondary {
+  color: var(--color-offwhite);
+  border-color: rgba(247, 245, 240, 0.5);
+}
+
+.site-header:not(.scrolled) .btn-secondary:hover {
+  background: var(--color-offwhite);
+  color: var(--color-navy);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--color-offwhite);
+  background: rgba(247, 245, 240, 0.1);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  padding: 0;
+  overflow: visible;
+  line-height: 40px;
+  margin-right: 4px;
+}
+
+.mobile-menu-toggle i {
+  display: block;
+  line-height: 1;
+}
+
+.site-header.scrolled .mobile-menu-toggle {
+  color: var(--color-navy);
+  background: rgba(15, 37, 64, 0.06);
+}
+
+/* === MOBILE NAV HEADER (logo + close button inside slide-out menu) === */
+.mobile-nav-header {
+  display: none;
+  position: relative;
+}
+
+.mobile-nav-header a {
+  display: block;
+}
+
+.mobile-nav-logo {
+  height: 30px;
+  filter: brightness(0) invert(1);
+  margin: 0 auto;
+  transition: var(--transition-fast);
+}
+
+.mobile-nav-header a:hover .mobile-nav-logo {
+  opacity: 0.8;
+}
+
+.mobile-nav-close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-offwhite);
+  background: rgba(247, 245, 240, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mobile-nav-close:hover {
+  background: var(--color-amber);
+  color: var(--color-navy);
+}
+
+.footer-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--fs-sm, 0.9rem);
+  color: inherit;
+  opacity: 0.85;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.footer-address i {
+  margin-top: 3px;
+  color: var(--color-amber, #E8A33D);
+}
+
+/* === RESPONSIVE HEADER === */
+@media (max-width: 992px) {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-navy);
+    padding: var(--space-md);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(247, 245, 240, 0.12);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .main-nav a,
+  .site-header.scrolled .main-nav a {
+    color: var(--color-offwhite);
+    font-size: var(--fs-md);
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active,
+  .site-header.scrolled .main-nav a:hover,
+  .site-header.scrolled .main-nav a.active {
+    color: var(--color-amber);
+  }
+
+  .header-actions .header-btn {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* --- Divider between nav links and login/signup --- */
+  .mobile-nav-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(247, 245, 240, 0.12);
+    margin: 4px 0;
+    list-style: none;
+  }
+
+  /* --- Sign Up styled as a pill button inside the mobile menu --- */
+  .mobile-nav-signup {
+    background: var(--color-amber);
+    color: var(--color-navy) !important;
+    padding: 10px 20px !important;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .mobile-nav-signup::after {
+    display: none;
+  }
+
+  .mobile-nav-auth-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .mobile-nav-login-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px !important;
+    border: 1px solid rgba(247, 245, 240, 0.4);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+  }
+
+  .mobile-nav-login-btn::after {
+    display: none;
+  }
+
+  .mobile-nav-signup {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-nav {
+    width: 100%;
+  }
+}
+
+/* === FOOTER === */
+.site-footer {
+  background: var(--color-navy);
+  color: var(--color-offwhite);
+  padding-top: var(--space-2xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(247, 245, 240, 0.12);
+}
+
+.footer-logo {
+  height: 34px;
+  margin-bottom: var(--space-sm);
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand p {
+  color: rgba(247, 245, 240, 0.65);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-sm);
+  max-width: 280px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(247, 245, 240, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+}
+
+.footer-socials a:hover {
+  background: var(--color-amber);
+  color: var(--color-navy);
+  transform: translateY(-4px);
+}
+
+.footer-col h4 {
+  color: var(--color-offwhite);
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  color: rgba(247, 245, 240, 0.65);
+  font-size: var(--fs-sm);
+  transition: var(--transition-fast);
+  width: fit-content;
+}
+
+.footer-col a:hover {
+  color: var(--color-amber);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  padding: var(--space-md) 0;
+}
+
+.footer-bottom-inner {
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(247, 245, 240, 0.5);
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 992px) {
+  .site-header.nav-open .logo,
+  .site-header.nav-open .mobile-menu-toggle {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* The header bar sits above .main-nav in z-index (1000 vs 999),
+     so even with the logo/toggle hidden, the header itself was still
+     intercepting clicks meant for the close button underneath it.
+     Disable pointer events on the whole header while nav is open,
+     then re-enable them just for .main-nav so its links/close button
+     stay clickable. */
+  .site-header.nav-open {
+    pointer-events: none;
+  }
+
+  .site-header.nav-open .main-nav {
+    pointer-events: auto;
+  }
+}
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

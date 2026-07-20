@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | RentLease</title>
+  <meta name="description" content="Get in touch with the RentLease team — we're here to help with bookings, listings, and support." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        
+        <div class="mobile-nav-header">
+          <a href="index.html"><img src="assets/images/logo.webp" alt="RentLease logo" class="mobile-nav-logo" /></a>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html">Browse Listings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li class="mobile-nav-divider"></li>
+          <li class="mobile-nav-auth-row">
+            <a href="login.html" class="mobile-nav-login-btn">Log In</a>
+            <a href="signup.html" class="mobile-nav-signup">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary header-btn">Log In</a>
+        <a href="signup.html" class="btn btn-primary header-btn">
+          Sign Up
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== 1. PAGE BANNER ===================== -->
+  <section class="page-banner" id="page-banner">
+    <div class="container">
+      <div class="breadcrumb" data-aos="fade-up">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Contact</span>
+      </div>
+      <h1 data-aos="fade-up" data-aos-delay="100">We'd Love to Hear From You</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Questions about a booking, a listing, or just want to say hi? Reach out anytime.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 2. CONTACT INFO CARDS ===================== -->
+  <section class="contact-info-section" id="contact-info">
+    <div class="container contact-info-grid">
+      <div class="contact-info-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Call Us</h4>
+        <p>+1 (800) 555-0182</p>
+        <span>Mon–Fri, 9am–6pm</span>
+      </div>
+      <div class="contact-info-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email Us</h4>
+        <p>support@stackly.com</p>
+        <span>We reply within 24 hours</span>
+      </div>
+      <div class="contact-info-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-location-dot"></i>
+        <h4>Visit Us</h4>
+        <p>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, </p>
+        <span>Salem, Tamil Nadu 636008.</span>
+      </div>
+      <div class="contact-info-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-clock"></i>
+        <h4>Support Hours</h4>
+        <p>24/7 Live Chat</p>
+        <span>Always here for you</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. CONTACT FORM + IMAGE ===================== -->
+  <section class="section contact-form-section" id="contact-form">
+    <div class="container contact-form-grid">
+      <div class="contact-form-visual" data-aos="fade-right">
+        <img src="assets/images/about-office.webp" alt="RentLease office" />
+        <div class="contact-form-visual-badge">
+          <i class="fa-solid fa-headset"></i>
+          <div><strong>24/7</strong><span>Support Available</span></div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper" data-aos="fade-left">
+        <span class="section-tag">Send a Message</span>
+        <h2>Fill Out the Form Below</h2>
+        <p>Our team typically responds within one business day.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Full Name <span class="required">*</span></label>
+              <input type="text" id="contactName" required />
+              <span class="form-error" id="contactNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address <span class="required">*</span></label>
+              <input type="email" id="contactEmail" required />
+              <span class="form-error" id="contactEmailError"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactPhone">Phone Number</label>
+              <input type="tel" id="contactPhone" />
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject <span class="required">*</span></label>
+              <select id="contactSubject" required>
+                <option value="">Select a topic</option>
+                <option value="booking">Booking Support</option>
+                <option value="listing">Listing Support</option>
+                <option value="billing">Billing & Payments</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-error" id="contactSubjectError"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Message <span class="required">*</span></label>
+            <textarea id="contactMessage" rows="5" required></textarea>
+            <span class="form-error" id="contactMessageError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary contact-submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+
+          <p class="form-success-message" id="formSuccessMessage" style="display:none;">
+            <i class="fa-solid fa-circle-check"></i> Thanks! Your message has been sent — we'll get back to you soon.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. GLOBAL OFFICES ===================== -->
+  <section class="section offices-section" id="offices">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Find Us</span>
+        <h2>Our Global Offices</h2>
+      </div>
+
+      <div class="offices-grid">
+        <div class="office-card" data-aos="fade-up" data-aos-delay="0">
+          <i class="fa-solid fa-building"></i>
+          <h3>San Francisco</h3>
+          <p>128 Market Street, Suite 400<br />San Francisco, CA 94105</p>
+          <span class="office-phone">+1 (800) 555-0182</span>
+        </div>
+        <div class="office-card" data-aos="fade-up" data-aos-delay="150">
+          <i class="fa-solid fa-building"></i>
+          <h3>London</h3>
+          <p>22 Baker Street, Floor 3<br />London, W1U 3BW, UK</p>
+          <span class="office-phone">+44 20 7946 0958</span>
+        </div>
+        <div class="office-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-building"></i>
+          <h3>Singapore</h3>
+          <p>1 Raffles Place, #20-01<br />Singapore 048616</p>
+          <span class="office-phone">+65 6123 4567</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4B. MAP ===================== -->
+  <section class="section map-section" id="map">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Find Us</span>
+        <h2>Our Location on the Map</h2>
+      </div>
+      <div class="map-embed-wrapper" data-aos="fade-up">
+        <iframe
+          src="https://www.google.com/maps?q=MMR%20Complex%2C%20Chinna%20Thirupathi%2C%20near%20Chinna%20Muniyappan%20Kovil%2C%20Salem%2C%20Tamil%20Nadu%20636008&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="RentLease office location on Google Maps">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. SUPPORT CHANNELS ===================== -->
+  <section class="support-channels-section" id="support-channels">
+    <div class="container support-channels-grid">
+      <div class="channel-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="fa-solid fa-comments"></i>
+        <h4>Live Chat</h4>
+        <p>Chat with our support team in real time.</p>
+        <a href="404.html" class="btn btn-primary channel-link">Start Chat</a>
+      </div>
+      <div class="channel-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-book"></i>
+        <h4>Help Center</h4>
+        <p>Browse guides and answers to common questions.</p>
+        <a href="404.html" class="btn btn-primary channel-link">Visit Help Center</a>
+      </div>
+      <div class="channel-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-people-group"></i>
+        <h4>Community Forum</h4>
+        <p>Connect with other renters and listers.</p>
+        <a href="404.html" class="btn btn-primary channel-link">Join the Forum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. FAQ QUICK LINKS ===================== -->
+  <section class="section faq-quick-section" id="faq-quick">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Quick Answers</span>
+        <h2>Common Questions</h2>
+      </div>
+
+      <div class="faq-list" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does it take to get a response?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Most inquiries are answered within 24 hours. Live chat responses are typically instant during business hours.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            I need help with an active booking — who do I contact?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Use the Live Chat option for the fastest response, or email support@rentlease.com with your booking ID.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer phone support outside business hours?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Phone support runs Mon–Fri, 9am–6pm. Outside those hours, Live Chat and email remain available 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. CTA BANNER ===================== -->
+  <section class="lister-cta-section" id="contact-cta">
+    <div class="container lister-cta-inner" data-aos="fade-up">
+      <div class="lister-cta-content">
+        <span class="section-tag hero-tag">Still Have Questions?</span>
+        <h2>Our Team Is Just a Message Away</h2>
+        <p>Reach out anytime — we're here to help you rent, lease, or list with confidence.</p>
+        <a href="404.html" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Send a Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.webp" alt="RentLease logo" class="footer-logo" />
+        <p>Your trusted global marketplace for renting and leasing anything, anywhere.</p>
+        <p class="footer-address">
+          <i class="fa-solid fa-location-dot"></i>
+          MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008
+        </p>
+        <div class="footer-socials">
+          <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="listings.html">Browse Listings</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="404.html">Help Center</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Trust & Safety</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <a href="404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+        <a href="404.html"><i class="fa-solid fa-envelope"></i> support@stackly.com</a>
+        <a href="404.html"><i class="fa-solid fa-comments"></i> Live Chat Support</a>
+        <span class="footer-hours"><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–7PM</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 RentLease. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/form-validation.js"></script>
+</body>
+</html>

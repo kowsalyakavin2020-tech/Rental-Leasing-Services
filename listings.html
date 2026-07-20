@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Listings | RentLease</title>
+  <meta name="description" content="Browse thousands of verified rental and leasing listings across property, vehicles, equipment, furniture, and electronics." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/listings.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <div class="mobile-nav-header">
+          <a href="index.html"><img src="assets/images/logo.webp" alt="RentLease logo" class="mobile-nav-logo" /></a>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html" class="active">Browse Listings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="mobile-nav-divider"></li>
+          <li class="mobile-nav-auth-row">
+            <a href="login.html" class="mobile-nav-login-btn">Log In</a>
+            <a href="signup.html" class="mobile-nav-signup">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary header-btn">Log In</a>
+        <a href="signup.html" class="btn btn-primary header-btn">
+          Sign Up
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== 1. PAGE BANNER ===================== -->
+  <section class="page-banner" id="page-banner">
+    <div class="container">
+      <div class="breadcrumb" data-aos="fade-up">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Browse Listings</span>
+      </div>
+      <h1 data-aos="fade-up" data-aos-delay="100">Find What You Need to Rent</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Browse <strong id="resultsCountText">12,500+</strong> verified listings across every category.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 2. POPULAR CATEGORIES QUICK-FILTER ===================== -->
+  <section class="quick-filter-section" id="quick-filter">
+    <div class="container">
+      <div class="quick-filter-strip" data-aos="fade-up">
+        <button class="chip active" data-quick-cat="">
+          <i class="fa-solid fa-layer-group"></i> All
+        </button>
+        <button class="chip" data-quick-cat="property">
+          <img src="assets/images/category-property.webp" alt="" /> Property
+        </button>
+        <button class="chip" data-quick-cat="vehicle">
+          <img src="assets/images/category-vehicle.webp" alt="" /> Vehicles
+        </button>
+        <button class="chip" data-quick-cat="equipment">
+          <img src="assets/images/category-equipment.webp" alt="" /> Equipment
+        </button>
+        <button class="chip" data-quick-cat="furniture">
+          <img src="assets/images/category-furniture.webp" alt="" /> Furniture
+        </button>
+        <button class="chip" data-quick-cat="electronics">
+          <img src="assets/images/category-electronics.webp" alt="" /> Electronics
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. FILTER BAR ===================== -->
+  <section class="filter-bar-section" id="filter-bar">
+    <div class="container">
+      <form class="filter-bar" id="filterForm">
+        <div class="filter-field filter-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="filterSearch" placeholder="Search listings..." />
+        </div>
+        <div class="filter-field">
+          <i class="fa-solid fa-layer-group"></i>
+          <select id="filterCategory">
+            <option value="">All Categories</option>
+            <option value="property">Property</option>
+            <option value="vehicle">Vehicles</option>
+            <option value="equipment">Equipment</option>
+            <option value="furniture">Furniture</option>
+            <option value="electronics">Electronics</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <i class="fa-solid fa-location-dot"></i>
+          <select id="filterLocation">
+            <option value="">Any Location</option>
+            <option value="downtown">Downtown District</option>
+            <option value="airport">Airport Hub</option>
+            <option value="industrial">Industrial Zone</option>
+            <option value="city-center">City Center</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <i class="fa-solid fa-sliders"></i>
+          <select id="filterPrice">
+            <option value="">Any Price</option>
+            <option value="0-25">$0 – $25/day</option>
+            <option value="25-75">$25 – $75/day</option>
+            <option value="75-150">$75 – $150/day</option>
+            <option value="150+">$150+/day</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary filter-apply-btn">
+          <i class="fa-solid fa-filter"></i> Apply
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== 4. SORT & VIEW TOGGLE ===================== -->
+  <section class="sort-bar-section">
+    <div class="container sort-bar">
+      <span class="sort-results-count"><strong id="visibleCount">12</strong> results found</span>
+      <div class="sort-controls">
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect">
+          <option value="relevance">Relevance</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="newest">Newest First</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridViewBtn" aria-label="Grid view"><i class="fa-solid fa-grip"></i></button>
+          <button class="view-btn" id="listViewBtn" aria-label="List view"><i class="fa-solid fa-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. LISTINGS GRID ===================== -->
+  <section class="section listings-results-section" id="listings-results">
+    <div class="container">
+      <div class="listings-grid" id="listingsGrid">
+
+        <div class="listing-card" data-category="property" data-price="85" data-location="downtown" data-aos="fade-up" data-aos-delay="0">
+          <div class="listing-img"><img src="assets/images/listing-1.webp" alt="3BHK apartment" /><span class="listing-badge">Property</span></div>
+          <div class="listing-body">
+            <h3>Modern 3BHK Apartment</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Downtown District</p>
+            <div class="listing-footer"><span class="listing-price">$85/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="vehicle" data-price="42" data-location="airport" data-aos="fade-up" data-aos-delay="50">
+          <div class="listing-img"><img src="assets/images/listing-2.webp" alt="Sedan car" /><span class="listing-badge">Vehicle</span></div>
+          <div class="listing-body">
+            <h3>Premium Sedan</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Airport Hub</p>
+            <div class="listing-footer"><span class="listing-price">$42/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="equipment" data-price="150" data-location="industrial" data-aos="fade-up" data-aos-delay="100">
+          <div class="listing-img"><img src="assets/images/listing-3.webp" alt="Excavator" /><span class="listing-badge">Equipment</span></div>
+          <div class="listing-body">
+            <h3>Mini Excavator</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Industrial Zone</p>
+            <div class="listing-footer"><span class="listing-price">$150/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="furniture" data-price="18" data-location="city-center" data-aos="fade-up" data-aos-delay="150">
+          <div class="listing-img"><img src="assets/images/listing-4.webp" alt="Sofa set" /><span class="listing-badge">Furniture</span></div>
+          <div class="listing-body">
+            <h3>3-Seater Sofa Set</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$18/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="electronics" data-price="22" data-location="downtown" data-aos="fade-up" data-aos-delay="200">
+          <div class="listing-img"><img src="assets/images/listing-5.webp" alt="Laptop" /><span class="listing-badge">Electronics</span></div>
+          <div class="listing-body">
+            <h3>MacBook Pro 16"</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Downtown District</p>
+            <div class="listing-footer"><span class="listing-price">$22/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="electronics" data-price="35" data-location="city-center" data-aos="fade-up" data-aos-delay="250">
+          <div class="listing-img"><img src="assets/images/listing-6.webp" alt="Camera" /><span class="listing-badge">Electronics</span></div>
+          <div class="listing-body">
+            <h3>DSLR Camera Kit</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$35/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="property" data-price="60" data-location="city-center" data-aos="fade-up" data-aos-delay="0">
+          <div class="listing-img"><img src="assets/images/listing-1.webp" alt="Studio apartment" /><span class="listing-badge">Property</span></div>
+          <div class="listing-body">
+            <h3>Cozy Studio Apartment</h3>
+            <p><i class="fa-solid fa-location-dot"></i> City Center</p>
+            <div class="listing-footer"><span class="listing-price">$60/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+        <div class="listing-card" data-category="vehicle" data-price="65" data-location="airport" data-aos="fade-up" data-aos-delay="50">
+          <div class="listing-img"><img src="assets/images/listing-2.webp" alt="SUV" /><span class="listing-badge">Vehicle</span></div>
+          <div class="listing-body">
+            <h3>Family SUV</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Airport Hub</p>
+            <div class="listing-footer"><span class="listing-price">$65/day</span><i class="fa-regular fa-heart listing-fav"></i></div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="no-results-message" id="noResultsMessage" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass"></i> No listings match your filters. Try adjusting your search.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 6. LOAD MORE ===================== -->
+  <section class="load-more-section">
+    <div class="container">
+      <button class="btn btn-secondary load-more-btn" id="loadMoreBtn" data-aos="fade-up">
+        <a href="404.html"><i>Load More Listings</i></a>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== 7. WHY BOOK WITH US (TRUST BANNER) ===================== -->
+  <section class="trust-banner-section" id="trust-banner">
+    <div class="container">
+      <div class="trust-banner-grid">
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h4>Verified Listings</h4>
+          <p>Every lister is ID-checked before going live.</p>
+        </div>
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-lock"></i>
+          <h4>Secure Payments</h4>
+          <p>Encrypted checkout with deposit protection.</p>
+        </div>
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h4>Easy Cancellations</h4>
+          <p>Flexible policies on most listings.</p>
+        </div>
+        <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-headset"></i>
+          <h4>24/7 Support</h4>
+          <p>Real help, any time you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. CUSTOMER REVIEWS ===================== -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Real Feedback</span>
+        <h2>Renters & Listers Love RentLease</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Filtering by price and location made it so easy to find exactly what I needed within minutes.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/review-1.webp" alt="Reviewer" />
+            <div><h4>Rahul Nair</h4><span>Property Renter</span></div>
+          </div>
+        </div>
+        <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>The listing photos and details were spot on — zero surprises when I picked up my rental.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/review-2.webp" alt="Reviewer" />
+            <div><h4>Emily Carter</h4><span>Vehicle Renter</span></div>
+          </div>
+        </div>
+        <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Great range of equipment listings near my site — saved me from buying gear I'd rarely use.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/review-3.webp" alt="Reviewer" />
+            <div><h4>Michael Obi</h4><span>Equipment Renter</span></div>
+          </div>
+        </div>
+        <div class="review-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Sorting by price helped me stick to my budget while still getting quality furniture.</p>
+          <div class="testimonial-author">
+            <img src="assets/images/review-4.webp" alt="Reviewer" />
+            <div><h4>Priya Sharma</h4><span>Furniture Renter</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. TOP RATED LISTERS ===================== -->
+  <section class="section listers-section" id="top-listers">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Trusted Owners</span>
+        <h2>Meet Our Top Rated Listers</h2>
+        <p>These listers consistently deliver great items and great service.</p>
+      </div>
+
+      <div class="listers-grid">
+        <div class="lister-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="assets/images/lister-1.webp" alt="Top lister" class="lister-avatar" />
+          <h3>David Kim</h3>
+          <span class="lister-role">Property & Furniture Lister</span>
+          <div class="lister-rating">
+            <i class="fa-solid fa-star"></i> 4.9 <span>(210 reviews)</span>
+          </div>
+          <div class="lister-stats">
+            <div><strong>38</strong><span>Listings</span></div>
+            <div><strong>2yrs</strong><span>On RentLease</span></div>
+          </div>
+        </div>
+        <div class="lister-card" data-aos="fade-up" data-aos-delay="150">
+          <img src="assets/images/lister-2.webp" alt="Top lister" class="lister-avatar" />
+          <h3>Amara Okafor</h3>
+          <span class="lister-role">Vehicle Lister</span>
+          <div class="lister-rating">
+            <i class="fa-solid fa-star"></i> 4.8 <span>(184 reviews)</span>
+          </div>
+          <div class="lister-stats">
+            <div><strong>22</strong><span>Listings</span></div>
+            <div><strong>1.5yrs</strong><span>On RentLease</span></div>
+          </div>
+        </div>
+        <div class="lister-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/images/lister-3.webp" alt="Top lister" class="lister-avatar" />
+          <h3>Carlos Mendez</h3>
+          <span class="lister-role">Equipment Lister</span>
+          <div class="lister-rating">
+            <i class="fa-solid fa-star"></i> 5.0 <span>(96 reviews)</span>
+          </div>
+          <div class="lister-stats">
+            <div><strong>15</strong><span>Listings</span></div>
+            <div><strong>3yrs</strong><span>On RentLease</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 10. FAQ ===================== -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Got Questions?</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I know a listing is verified?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Every lister completes ID verification and every listing is manually reviewed by our team before it goes live. Look for the verified badge on each listing.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens if the item is damaged during my rental?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>All bookings include deposit protection. Minor wear is expected, but significant damage is assessed against the deposit with both parties notified before any deduction.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I cancel or reschedule a booking?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — most listings offer flexible cancellation up to 24-48 hours before pickup. Exact terms are shown on each listing page before you book.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How do payouts work if I list my own item?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Payouts are released to your linked account within 24 hours after the rental period starts, minus our small service fee.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 11. CTA BANNER ===================== -->
+  <section class="lister-cta-section" id="become-lister">
+    <div class="container lister-cta-inner" data-aos="fade-up">
+      <div class="lister-cta-content">
+        <span class="section-tag hero-tag">Can't Find What You Need?</span>
+        <h2>List Your Own Item and Start Earning</h2>
+        <p>Turn your idle property, vehicle, or equipment into steady monthly income.</p>
+        <a href="404.html" class="btn btn-primary">
+          <i class="fa-solid fa-plus"></i> List Your Item Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+        <p>Your trusted global marketplace for renting and leasing anything, anywhere.</p>
+        <p class="footer-address">
+          <i class="fa-solid fa-location-dot"></i>
+          MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008
+        </p>
+        <div class="footer-socials">
+          <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="listings.html">Browse Listings</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="404.html">Help Center</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Trust & Safety</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <a href="404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+        <a href="404.html"><i class="fa-solid fa-envelope"></i> support@stackly.com</a>
+        <a href="404.html"><i class="fa-solid fa-comments"></i> Live Chat Support</a>
+        <span class="footer-hours"><i class="fa-solid fa-clock"></i> Mon–Sat, 9AM–7PM</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 RentLease. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/listings.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookings | RentLease</title>
+  <meta name="description" content="View and manage your active, completed, and cancelled bookings on RentLease." />
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="dashboard-logo">
+        <img src="assets/images/logo.webp" alt="RentLease logo" />
+      </a>
+
+      <nav class="dashboard-nav">
+        <a href="user-dashboard.html" class="dash-nav-link">
+          <i class="fa-solid fa-grip"></i> Overview
+        </a>
+        <a href="user-bookings.html" class="dash-nav-link active">
+          <i class="fa-solid fa-calendar-check"></i> My Bookings
+        </a>
+        <a href="user-listings.html" class="dash-nav-link">
+          <i class="fa-solid fa-layer-group"></i> My Listings
+        </a>
+        <a href="user-notifications.html" class="dash-nav-link">
+          <i class="fa-solid fa-bell"></i> Notifications
+        </a>
+        <a href="user-saved.html" class="dash-nav-link">
+          <i class="fa-solid fa-heart"></i> Saved Items
+        </a>
+        <a href="user-settings.html" class="dash-nav-link">
+          <i class="fa-solid fa-gear"></i> Account Settings
+        </a>
+      </nav>
+
+      <a href="login.html" class="dashboard-logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </a>
+    </aside>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="dashboard-main">
+
+      <!-- ===================== TOP BAR ===================== -->
+      <header class="dashboard-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-welcome">
+          <h1>My Bookings</h1>
+          <p class="topbar-email" id="userEmailDisplay">Loading account info...</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="topbar-badge">3</span>
+          </button>
+          <div class="topbar-user">
+            <img src="assets/images/avatar-1.webp" alt="User avatar" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== BOOKINGS ===================== -->
+      <section class="dash-section">
+        <div class="dash-section-header">
+          <h2>All Bookings</h2>
+          <a href="404.html" class="btn btn-secondary dash-small-btn">Browse More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="bookings-table" data-aos="fade-up">
+          <div class="booking-row booking-row-head">
+            <span>Item</span>
+            <span>Dates</span>
+            <span>Status</span>
+            <span>Total</span>
+            <span></span>
+          </div>
+
+          <div class="booking-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-2.webp" alt="Premium Sedan" />
+              <div><strong>Premium Sedan</strong><span>Airport Hub</span></div>
+            </div>
+            <span>Jul 22 – Jul 25</span>
+            <span class="status-badge status-active">Active</span>
+            <span class="booking-total">$126</span>
+            <button class="row-action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+
+          <div class="booking-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-4.webp" alt="Sofa Set" />
+              <div><strong>3-Seater Sofa Set</strong><span>City Center</span></div>
+            </div>
+            <span>Jul 18 – Aug 18</span>
+            <span class="status-badge status-active">Active</span>
+            <span class="booking-total">$540</span>
+            <button class="row-action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+
+          <div class="booking-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-6.webp" alt="DSLR Camera" />
+              <div><strong>DSLR Camera Kit</strong><span>City Center</span></div>
+            </div>
+            <span>Jun 30 – Jul 02</span>
+            <span class="status-badge status-completed">Completed</span>
+            <span class="booking-total">$70</span>
+            <button class="row-action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+
+          <div class="booking-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-1.webp" alt="3BHK Apartment" />
+              <div><strong>Modern 3BHK Apartment</strong><span>Downtown District</span></div>
+            </div>
+            <span>Jun 10 – Jun 17</span>
+            <span class="status-badge status-cancelled">Cancelled</span>
+            <span class="booking-total">$595</span>
+            <button class="row-action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+
+          <div class="booking-row">
+            <div class="booking-item">
+              <img src="assets/images/listing-3.webp" alt="Excavator" />
+              <div><strong>Mini Excavator</strong><span>Industrial Zone</span></div>
+            </div>
+            <span>May 28 – May 30</span>
+            <span class="status-badge status-completed">Completed</span>
+            <span class="booking-total">$300</span>
+            <button class="row-action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

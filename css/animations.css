@@ -1,0 +1,111 @@
+/* ==========================================================================
+   ANIMATIONS — AOS overrides + GSAP-supporting classes
+   ========================================================================== */
+
+/* === AOS smoother easing override === */
+[data-aos] {
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-40px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(40px);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.85);
+}
+
+/* === GSAP hero entrance classes (elements start hidden, GSAP animates them in) === */
+.gsap-hero-tag,
+.gsap-hero-title,
+.gsap-hero-subtitle,
+.gsap-hero-search,
+.gsap-hero-stats {
+  opacity: 0;
+}
+
+.gsap-hero-title .gsap-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* === Floating hero background subtle zoom === */
+.hero-bg-img {
+  animation: heroSlowZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroSlowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+/* === Category icon pulse on hover (GSAP-friendly, CSS fallback) === */
+.category-card .category-overlay i {
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-overlay i {
+  transform: scale(1.2) rotate(-6deg);
+}
+
+/* === Button ripple-style hover glow === */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary i,
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Stat number pop-in support === */
+.hero-stat-number,
+.stat-number {
+  display: inline-block;
+}
+
+/* === Reduce motion accessibility === */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos],
+  .hero-bg-img,
+  .gsap-hero-tag,
+  .gsap-hero-title,
+  .gsap-hero-subtitle,
+  .gsap-hero-search,
+  .gsap-hero-stats {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
