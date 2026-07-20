@@ -16,16 +16,49 @@ document.addEventListener('DOMContentLoaded', function () {
   const heroStats = document.querySelector('.hero-stats');
 
   if (heroTag && heroTitle) {
-    // Split hero title into word spans for staggered reveal
-    const words = heroTitle.textContent.trim().split(' ');
-    heroTitle.innerHTML = words
-      .map(function (word) {
-        return '<span class="gsap-word" style="margin-right:0.3em;">' + word + '</span>';
-      })
-      .join(' ');
+    // ------------------------------------------------------------------
+    // Word-by-word split, WITHOUT destroying existing markup (e.g. the
+    // <span class="text-amber"> highlight inside the title).
+    //
+    // The previous version used heroTitle.textContent — that strips all
+    // HTML tags, silently deleting the amber highlight span, and it also
+    // added an inline margin-right on top of the normal space between
+    // words. That extra spacing made the title noticeably wider than
+    // its CSS-intended width, forcing extra line-wraps on mobile that
+    // overlapped the tight line-height — which is what caused the
+    // hero text to visually overlap on the landing page only (this is
+    // the only page using this script's hero-title logic).
+    //
+    // Fix: walk the title's existing child nodes (text nodes AND the
+    // amber span) and wrap only the *words inside each text node* in a
+    // span, leaving the amber span itself completely untouched. No
+    // extra margin is added — normal spaces are preserved as-is so the
+    // title wraps exactly like it does with animations turned off.
+    // ------------------------------------------------------------------
+    const originalNodes = Array.from(heroTitle.childNodes);
+    heroTitle.innerHTML = '';
 
-    // preserve the amber highlight span if present
-    const amberSpan = heroTitle.querySelector('.text-amber');
+    originalNodes.forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const parts = node.textContent.split(/(\s+)/); // keep whitespace tokens
+        parts.forEach(function (part) {
+          if (part === '') return;
+          if (/^\s+$/.test(part)) {
+            heroTitle.appendChild(document.createTextNode(part));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'gsap-word';
+            span.textContent = part;
+            heroTitle.appendChild(span);
+          }
+        });
+      } else {
+        // Element node (e.g. the amber <span>) — keep it exactly as-is,
+        // just tag it so it participates in the same stagger reveal.
+        node.classList.add('gsap-word');
+        heroTitle.appendChild(node);
+      }
+    });
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -40,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .to(heroSearch, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
       .to(heroStats, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3');
 
+    gsap.set(heroTitle.querySelectorAll('.gsap-word'), { opacity: 0, y: 20, display: 'inline-block' });
     gsap.set([heroSubtitle, heroSearch, heroStats], { y: 20 });
   }
 

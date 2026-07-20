@@ -36,11 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function openMobileNav() {
     if (mainNav) mainNav.classList.add('active');
     if (header) header.classList.add('nav-open');
+    // Prevent the page behind the mobile menu from scrolling
+    document.body.classList.add('nav-open-lock');
   }
 
   function closeMobileNav() {
     if (mainNav) mainNav.classList.remove('active');
     if (header) header.classList.remove('nav-open');
+    document.body.classList.remove('nav-open-lock');
   }
 
   if (mobileToggle && mainNav) {

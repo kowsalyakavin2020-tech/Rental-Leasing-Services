@@ -49,6 +49,15 @@
   z-index: 999;
 }
 
+/* These are mobile-menu-only elements (divider + Log In/Sign Up row).
+   Hidden by default; only shown inside the 992px mobile media query below.
+   Without this, they were rendering inline in the desktop nav too,
+   causing "Log In Sign Up" to appear twice in the navbar. */
+.mobile-nav-divider,
+.mobile-nav-auth-row {
+  display: none;
+}
+
 .main-nav ul {
   display: flex;
   align-items: center;
@@ -205,14 +214,30 @@
   color: var(--color-amber, #E8A33D);
 }
 
+/* === MOBILE NAV: BODY SCROLL LOCK ===
+   Added to <body> via JS while the mobile menu is open, so the page
+   behind the slide-out menu can't be scrolled at the same time. */
+body.nav-open-lock {
+  overflow: hidden;
+  height: 100%;
+}
+
 /* === RESPONSIVE HEADER === */
 @media (max-width: 992px) {
   .main-nav {
     position: fixed;
     top: 0;
     right: -100%;
+    bottom: 0;
     width: 280px;
     height: 100vh;
+    /* Fallback for browsers without dvh support is the 100vh above.
+       100dvh accounts for mobile browser address-bar show/hide, which
+       is what was making 100vh come up short and let the footer logo
+       peek through underneath the menu panel on the taller pages
+       (listings/about/contact). Combined with top:0 + bottom:0, the
+       panel is now pinned to the true viewport edges either way. */
+    height: 100dvh;
     background: var(--color-navy);
     padding: var(--space-md);
     transition: var(--transition-base);
@@ -262,8 +287,9 @@
     display: flex;
   }
 
-  /* --- Divider between nav links and login/signup --- */
+  /* --- Divider between nav links and login/signup (mobile only) --- */
   .mobile-nav-divider {
+    display: block;
     width: 100%;
     height: 1px;
     background: rgba(247, 245, 240, 0.12);
