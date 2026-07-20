@@ -542,6 +542,8 @@
 }
 
 .blog-card {
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--color-offwhite);
@@ -562,6 +564,9 @@
 
 .blog-body {
   padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .blog-tag {
@@ -573,11 +578,18 @@
 
 .blog-body h3 {
   font-size: var(--fs-base);
-  margin: 8px 0 var(--space-sm);
+  margin: 8px 0 var(--space-xs);
 }
 
+.blog-excerpt {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
 .blog-read-more {
   display: inline-block;
+  width: fit-content;
+  margin-top: auto;
   font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--color-navy);

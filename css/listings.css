@@ -329,7 +329,7 @@
   grid-template-columns: 1fr;
 }
 
-.listings-grid.list-view .listing-card {
+.listings-grid.list-view .listing-card:not(.hidden-by-filter) {
   display: flex;
   flex-direction: row;
 }
