@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 4px;
 }
 
 .logo {
@@ -133,20 +134,23 @@
   height: 40px;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-offwhite);
   background: rgba(247, 245, 240, 0.1);
   border-radius: var(--radius-sm);
   flex-shrink: 0;
   padding: 0;
-  overflow: visible;
-  line-height: 40px;
-  margin-right: 4px;
+  border: none;
+  line-height: normal;
 }
 
 .mobile-menu-toggle i {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  width: 100%;
+  height: 100%;
 }
 
 .site-header.scrolled .mobile-menu-toggle {
@@ -285,6 +289,11 @@ body.nav-open-lock {
 
   .mobile-menu-toggle {
     display: flex;
+    margin-right: 2px;
+  }
+
+  .container {
+    padding: 0 var(--space-md, 20px);
   }
 
   /* --- Divider between nav links and login/signup (mobile only) --- */

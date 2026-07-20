@@ -577,18 +577,21 @@
 }
 
 .blog-read-more {
-  font-size: var(--fs-sm);
+  display: inline-block;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--color-navy);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  background: transparent;
+  border: 1.5px solid var(--color-navy);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
   transition: var(--transition-fast);
 }
 
 .blog-card:hover .blog-read-more {
-  gap: 10px;
-  color: var(--color-amber);
+  background: var(--color-amber);
+  border-color: var(--color-amber);
+  color: var(--color-navy);
 }
 
 /* === BECOME A LISTER CTA === */
