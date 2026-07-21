@@ -43,6 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const chips = document.querySelectorAll('.chip[data-quick-cat]');
   const loadMoreBtn = document.getElementById('loadMoreBtn');
 
+  // === Inject "View Details" hover button into every listing image ===
+  cards.forEach(function (card) {
+    const imgWrap = card.querySelector('.listing-img');
+    if (imgWrap && !imgWrap.querySelector('.listing-view-btn')) {
+      const viewBtn = document.createElement('a');
+      viewBtn.href = '404.html';
+      viewBtn.className = 'listing-view-btn';
+      viewBtn.innerHTML = '<i class="fa-solid fa-eye"></i> View Details';
+      imgWrap.appendChild(viewBtn);
+    }
+  });
+
   // === Pre-fill from URL (?cat=vehicle, ?q=...) ===
   const urlParams = new URLSearchParams(window.location.search);
   const catFromUrl = urlParams.get('cat');

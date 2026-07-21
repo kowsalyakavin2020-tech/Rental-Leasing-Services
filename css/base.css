@@ -169,3 +169,23 @@ p {
   h2 { font-size: var(--fs-lg); }
   .container { padding: 0 var(--space-sm); }
 }
+/* === Disable hover-triggered movement on touch devices (fixes mobile "shake") === */
+@media (hover: none), (pointer: coarse) {
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-outline-light:hover,
+  .footer-socials a:hover,
+  .listing-card:hover,
+  .contact-info-card:hover,
+  .office-card:hover,
+  .channel-card:hover,
+  .review-card:hover,
+  .lister-card:hover,
+  .category-card:hover,
+  .my-listing-card:hover,
+  .dash-stat-card:hover,
+  .faq-question:hover {
+    transform: none !important;
+  }
+}

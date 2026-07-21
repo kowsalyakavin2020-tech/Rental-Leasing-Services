@@ -138,18 +138,26 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   }
 
-  // === HEADER SHRINK PARALLAX ON HERO SCROLL ===
-  if (document.querySelector('.hero')) {
-    gsap.to('.hero-bg-img', {
-      yPercent: 15,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
-  }
+  // === HEADER SHRINK PARALLAX ON HERO SCROLL (desktop only) ===
+  // Mobile browsers resize the viewport as the address bar shows/hides
+  // while scrolling, which makes ScrollTrigger's scrub recalculate and
+  // jump — showing up as a "shake" on touch devices. Restrict the
+  // parallax to desktop widths where the viewport is stable.
+  let mm = gsap.matchMedia();
+
+  mm.add('(min-width: 993px)', function () {
+    if (document.querySelector('.hero')) {
+      gsap.to('.hero-bg-img', {
+        yPercent: 15,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+    }
+  });
 
 });

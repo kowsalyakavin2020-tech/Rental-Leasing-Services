@@ -255,7 +255,8 @@
 
 .listing-img {
   position: relative;
-  height: 180px;
+  width: 100%;
+  height: 240px;
   overflow: hidden;
 }
 
@@ -280,6 +281,38 @@
   font-weight: 600;
   padding: 4px 12px;
   border-radius: var(--radius-full);
+}
+
+/* === HOVER "VIEW DETAILS" BUTTON (injected via JS) === */
+.listing-view-btn {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--color-navy);
+  color: var(--color-offwhite);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-base);
+  white-space: nowrap;
+}
+
+.listing-img:hover .listing-view-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.listing-view-btn:hover {
+  background: var(--color-amber);
+  color: var(--color-navy);
 }
 
 .listing-body {
@@ -468,7 +501,7 @@
   font-style: italic;
 }
 
-/* === TESTIMONIAL / REVIEW AUTHOR (was missing — fixes oversized avatar bug) === */
+/* === TESTIMONIAL / REVIEW AUTHOR === */
 .testimonial-stars {
   color: var(--color-amber);
   font-size: var(--fs-sm);
@@ -703,7 +736,7 @@
   .filter-field { width: 100%; }
   .listings-grid { grid-template-columns: repeat(2, 1fr); }
   .listings-grid.list-view .listing-card { flex-direction: column; }
-  .listings-grid.list-view .listing-img { width: 100%; height: 180px; }
+  .listings-grid.list-view .listing-img { width: 100%; height: 220px; }
   .trust-banner-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
   .listers-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
 }
@@ -714,4 +747,5 @@
   .sort-bar { flex-direction: column; align-items: flex-start; }
   .trust-banner-grid { grid-template-columns: 1fr; }
   .faq-question { font-size: var(--fs-sm); padding: var(--space-sm); }
+  .listing-img { height: 200px; }
 }
