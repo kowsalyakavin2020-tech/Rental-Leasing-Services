@@ -16,11 +16,13 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .hero-bg-img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
 }
 
@@ -34,8 +36,6 @@
   position: relative;
   z-index: 1;
   padding-top: var(--header-height);
-
-  /* Center the whole hero column and give it a readable max-width */
   display: flex;
   justify-content: center;
 }
@@ -43,8 +43,6 @@
 .hero-content {
   max-width: 720px;
   width: 100%;
-
-  /* Center all hero content and its text */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,10 +61,6 @@
   margin: var(--space-sm) 0 var(--space-md);
 }
 
-/* Words wrapped by gsap-animations.js for the staggered entrance.
-   inline-block lets the y-transform animate without visually
-   overlapping the next line; line-height keeps wrapped lines from
-   sitting too close together while words are still animating in. */
 .gsap-word {
   display: inline-block;
   line-height: 1.25;
@@ -311,7 +305,6 @@
   transform: scale(1.08);
 }
 
-/* --- View Details button that appears on hover --- */
 .listing-view-btn {
   position: absolute;
   left: 50%;
@@ -706,7 +699,6 @@
   .steps-grid { grid-template-columns: 1fr; }
   .newsletter-inner { flex-direction: column; text-align: center; }
 
-  /* --- Stack the newsletter input above the Subscribe button on mobile --- */
   .newsletter-form {
     width: 100%;
     flex-direction: column;
@@ -730,7 +722,6 @@
   .hero-inner { padding-top: 0; }
   .section { padding: var(--space-lg) 0; }
 
-  /* --- Hero text cut fix (tablet/large phone) --- */
   .hero-content {
     max-width: 100%;
   }
@@ -750,6 +741,12 @@
   .categories-grid { grid-template-columns: 1fr 1fr; }
   .listings-grid { grid-template-columns: 1fr; }
 
+  /* --- Stats banner: stack to single column on small phones (fixes overflow) --- */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
   /* --- Hero text cut fix (small phone) --- */
   .hero-title {
     font-size: var(--fs-xl);
@@ -761,13 +758,6 @@
 
 /* ==========================================================================
    HERO OVERFLOW FIX
-   Flex items (hero-inner, hero-content, hero-search and its children)
-   don't shrink below their content's natural width by default
-   (min-width defaults to "auto"). On narrow screens this pushes the
-   whole hero wider than the viewport, and since .hero has
-   overflow: hidden, the extra width gets visually clipped —
-   which is what was cutting off the hero title text.
-   Forcing min-width: 0 lets these items shrink to fit properly.
    ========================================================================== */
 .hero-inner,
 .hero-content,

@@ -417,4 +417,10 @@
   .timeline-item { flex-direction: column; }
   .timeline-dot { position: relative; left: 0; margin-bottom: var(--space-xs); }
   .timeline::before { left: 19px; }
+
+  /* --- Stats banner: stack to single column on small phones (fixes overflow) --- */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }

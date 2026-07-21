@@ -13,6 +13,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -169,6 +171,7 @@ p {
   h2 { font-size: var(--fs-lg); }
   .container { padding: 0 var(--space-sm); }
 }
+
 /* === Disable hover-triggered movement on touch devices (fixes mobile "shake") === */
 @media (hover: none), (pointer: coarse) {
   .btn:hover,
